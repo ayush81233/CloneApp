@@ -6,15 +6,11 @@
     <title>MovieMedia</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-
-<!-- ================= TOP RATED ================= -->
 
 <section class="movie-section">
 
@@ -57,9 +53,6 @@
 </section>
 
 
-
-<!-- ================= TRENDING ================= -->
-
 <section class="movie-section">
 
     <h2>🔥 Trending Now</h2>
@@ -96,8 +89,6 @@
 
 
 
-<!-- ================= RECENT RELEASE ================= -->
-
 <section class="movie-section">
 
     <h2>🎬 Recent Releases</h2>
@@ -130,9 +121,6 @@
 </section>
 
 
-
-<!-- ================= LIVE STREAM ================= -->
-
 <section class="live-section">
 
     <h2>🔴 Live Streaming</h2>
@@ -153,7 +141,7 @@
                 Watch exclusive interviews and movie announcements.
             </p>
 
-            <button>▶ Watch Live</button>
+            <button type="button" onclick="watchLive()">▶ Watch Live</button>
 
         </div>
 
@@ -162,23 +150,19 @@
 </section>
 
 
-
-
-<!-- ================= AI CHATBOT ================= -->
-
 <div class="chatbot">
 
-    <button class="chat-btn">
+    <button type="button" class="chat-btn" onclick="toggleChat()">
         <i class="fa-solid fa-robot"></i>
     </button>
 
-    <div class="chat-window">
+    <div class="chat-window" id="chatWindow" style="display: none;">
 
         <div class="chat-header">
 
-            <h3>Netflix AI</h3>
+            <h3>MovieMedia AI</h3>
 
-            <button class="close-btn">
+            <button type="button" class="close-btn" onclick="toggleChat()">
                 ✖
             </button>
 
@@ -202,11 +186,9 @@
 
         <div class="chat-footer">
 
-            <input
-            type="text"
-            placeholder="Type your message...">
+            <input type="text" id="chatInput" placeholder="Type your message...">
 
-            <button>
+            <button type="button" onclick="sendMessage()">
                 <i class="fa-solid fa-paper-plane"></i>
             </button>
 
@@ -217,8 +199,6 @@
 </div>
 
 
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -293,6 +273,84 @@
     </p>
 
 </footer>
+
+<script>
+    // Chatbot functionality
+    function toggleChat() {
+        const chatWindow = document.getElementById('chatWindow');
+        if (chatWindow.style.display === 'none') {
+            chatWindow.style.display = 'block';
+        } else {
+            chatWindow.style.display = 'none';
+        }
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        
+        if (message) {
+            const chatBody = document.querySelector('.chat-body');
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'user-message';
+            userMsg.textContent = message;
+            chatBody.appendChild(userMsg);
+            
+            // Add bot response
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'bot-message';
+                botMsg.textContent = generateBotResponse(message);
+                chatBody.appendChild(botMsg);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 500);
+            
+            input.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    }
+
+    function generateBotResponse(userMessage) {
+        const responses = {
+            'hello': 'Hello! Welcome to MovieMedia. How can I help you?',
+            'recommend': 'I recommend checking our Top Rated section for amazing movies!',
+            'movie': 'Which movie would you like to know more about?',
+            'series': 'We have great series available. Check the Trending Now section!',
+            'watch': 'Head to Home_page.html to start watching!',
+            'account': 'Visit your profile page for account settings.',
+            'help': 'I can help you find movies, manage your account, or provide information about MovieMedia.'
+        };
+        
+        const lowerMessage = userMessage.toLowerCase();
+        for (const [key, response] of Object.entries(responses)) {
+            if (lowerMessage.includes(key)) {
+                return response;
+            }
+        }
+        
+        return "'I\\'m here to help! Ask me about movies, series, or your account.';"
+    }
+
+    function watchLive() {
+        alert('Live streaming will start soon!');
+    }
+
+    // Add navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for footer links
+        const footerLinks = document.querySelectorAll('.footer-links a');
+        footerLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('Page navigation coming soon!');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

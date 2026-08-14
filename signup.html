@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieMedia | Sign Up</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="signup-container">
+
+    <div class="signup-box">
+
+        <h1>MovieMedia</h1>
+
+        <h2>Create Account</h2>
+
+        <form method="POST" action="#" onsubmit="handleSignup(event)">
+
+            <div class="row">
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user-tag"></i>
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+
+            <button type="submit" class="signup-btn">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="login-link">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+    function handleSignup(event) {
+        event.preventDefault();
+        const fullName = event.target.fullName.value;
+        const username = event.target.username.value;
+        const email = event.target.email.value;
+        const phone = event.target.phone.value;
+        const password = event.target.password.value;
+        const confirmPassword = event.target.confirmPassword.value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        if (fullName && username && email && phone && password) {
+            alert('Account created successfully for ' + fullName);
+            window.location.href = 'Loginpage.html';
+        } else {
+            alert('Please fill in all fields');
+        }
+    }
+</script>
+
+</body>
+</html>

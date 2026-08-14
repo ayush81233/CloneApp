@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieMedia | My Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="profile-container">
+
+
+    <aside class="sidebar">
+
+        <div class="profile-image">
+
+            <img src="images/profile.jpg" alt="Profile">
+
+            <h2>Ayush Upadhya</h2>
+
+            <p>Premium Member</p>
+
+        </div>
+
+        <ul>
+
+            <li><i class="fa-solid fa-user"></i> <a href="#myProfile">My Profile</a></li>
+
+            <li><i class="fa-solid fa-download"></i> <a href="#downloads">Downloads</a></li>
+
+            <li><i class="fa-solid fa-heart"></i> <a href="#savedMovies">Saved Movies</a></li>
+
+            <li><i class="fa-solid fa-clock-rotate-left"></i> <a href="#history">Watch History</a></li>
+
+            <li><i class="fa-solid fa-gear"></i> <a href="#settings">Settings</a></li>
+
+        </ul>
+
+        <button class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="content">
+
+
+        <section class="card" id="myProfile">
+
+            <h2>User Details</h2>
+
+            <p><strong>Name:</strong> Ayush Upadhya</p>
+
+            <p><strong>Email:</strong> ayush@email.com</p>
+
+            <p><strong>Phone:</strong> +91 9876543210</p>
+
+            <p><strong>Membership:</strong> Premium</p>
+
+            <button type="button" onclick="editProfile()">Edit Profile</button>
+
+        </section>
+
+        <!-- Downloads -->
+
+        <section class="card" id="downloads">
+
+            <h2>Downloads</h2>
+
+            <div class="movie-grid">
+
+                <div class="movie-card">
+
+                    <img src="images/movie1.jpg" alt="Movie">
+
+                    <h4>Avengers Endgame</h4>
+
+                </div>
+
+                <div class="movie-card">
+
+                    <img src="images/movie2.jpg" alt="Movie">
+
+                    <h4>Interstellar</h4>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card" id="savedMovies">
+
+            <h2>Saved Movies</h2>
+
+            <div class="movie-grid">
+
+                <div class="movie-card">
+
+                    <img src="images/movie3.jpg" alt="Movie">
+
+                    <h4>Batman</h4>
+
+                </div>
+
+                <div class="movie-card">
+
+                    <img src="images/movie4.jpg" alt="Movie">
+
+                    <h4>Inception</h4>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card" id="history">
+
+            <h2>Watch History</h2>
+
+            <table>
+
+                <tr>
+                    <th>Movie</th>
+                    <th>Last Watched</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Joker</td>
+                    <td>Yesterday</td>
+                    <td>Completed</td>
+                </tr>
+
+                <tr>
+                    <td>Deadpool</td>
+                    <td>2 Days Ago</td>
+                    <td>Continue Watching</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Feedback</h2>
+
+            <form method="POST" action="#" onsubmit="handleFeedback(event)">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="email" name="email" placeholder="Email" required>
+
+                <textarea rows="5" name="feedback" placeholder="Share your feedback" required></textarea>
+
+                <button type="submit">
+                    Submit Feedback
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+    function editProfile() {
+        alert('Edit profile feature coming soon!');
+    }
+
+    function handleLogout() {
+        if (confirm('Are you sure you want to logout?')) {
+            alert('Logged out successfully');
+            window.location.href = 'Loginpage.html';
+        }
+    }
+
+    function handleFeedback(event) {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const feedback = event.target.feedback.value;
+        
+        if (name && email && feedback) {
+            alert('Thank you for your feedback, ' + name + '!');
+            event.target.reset();
+        } else {
+            alert('Please fill in all fields');
+        }
+    }
+
+    // Add logout button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoutBtn = document.querySelector('.logout-btn');
+        if (logoutBtn) {
+            logoutBtn.onclick = handleLogout;
+        }
+    });
+</script>
+
+</body>
+</html>
