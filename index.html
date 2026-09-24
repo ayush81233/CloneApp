@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieMedia | Unlimited Movies, TV Shows, and More</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>MovieMedia</h2>
+        </div>
+        <a href="Loginpage.html" class="nav-btn">Sign In</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=2069&auto=format&fit=crop" alt="Movies Background">
+            <div class="hero-gradient"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows, and more</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            
+            <form action="signup.html" class="email-cta">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">
+                    Get Started <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <div class="features-divider"></div>
+    
+    <section class="feature-row">
+        <div class="feature-text">
+            <h2>Enjoy on your TV</h2>
+            <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+        </div>
+        <div class="feature-visual">
+            <div class="tv-mockup">
+                <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=2070&auto=format&fit=crop" alt="TV Mockup">
+                <!-- Decorative glow -->
+                <div class="mockup-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-divider"></div>
+
+    <section class="feature-row reverse">
+        <div class="feature-text">
+            <h2>Download your shows to watch offline</h2>
+            <p>Save your favorites easily and always have something to watch.</p>
+        </div>
+        <div class="feature-visual">
+            <div class="mobile-mockup">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" alt="Mobile Mockup">
+                <div class="download-card">
+                    <img src="images/movie8.jpg" alt="Stranger Things" class="poster" onerror="this.src='https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop'">
+                    <div class="download-text">
+                        <h4>Stranger Things</h4>
+                        <span>Downloading...</span>
+                    </div>
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <div class="mockup-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-divider"></div>
+
+    <section class="feature-row">
+        <div class="feature-text">
+            <h2>Watch everywhere</h2>
+            <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+        </div>
+        <div class="feature-visual">
+            <div class="devices-mockup">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1926&auto=format&fit=crop" alt="Devices Mockup">
+                <div class="mockup-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-divider"></div>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <ul class="accordion">
+            <li>
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    What is MovieMedia?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="accordion-body">
+                    <p>MovieMedia is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    How much does MovieMedia cost?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="accordion-body">
+                    <p>Watch MovieMedia on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from $6.99 to $19.99 a month. No extra costs, no contracts.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    Where can I watch?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="accordion-body">
+                    <p>Watch anywhere, anytime. Sign in with your MovieMedia account to watch instantly on the web at moviemedia.com from your personal computer or on any internet-connected device that offers the MovieMedia app.</p>
+                </div>
+            </li>
+            <li>
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    What can I watch on MovieMedia?
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <div class="accordion-body">
+                    <p>MovieMedia has an extensive library of feature films, documentaries, TV shows, anime, award-winning MovieMedia originals, and more. Watch as much as you want, anytime you want.</p>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="faq-cta">
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <form action="signup.html" class="email-cta">
+                <input type="email" placeholder="Email address" required>
+                <button type="submit">
+                    Get Started <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div class="features-divider"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>MovieMedia</h2>
+                <p>Unlimited movies, TV shows and more.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Series</a></li>
+                    <li><a href="#">My List</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">© 2026 MovieMedia</p>
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const body = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-body').forEach(el => {
+                if(el !== body) {
+                    el.style.maxHeight = null;
+                    el.previousElementSibling.querySelector('i').classList.replace('fa-xmark', 'fa-plus');
+                }
+            });
+
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null;
+                icon.classList.replace('fa-xmark', 'fa-plus');
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+                icon.classList.replace('fa-plus', 'fa-xmark');
+            }
+        }
+    </script>
+</body>
+</html>
